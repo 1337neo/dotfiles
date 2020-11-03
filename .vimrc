@@ -21,6 +21,7 @@ Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
 call plug#end()
 
 "personal config
@@ -33,7 +34,7 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set autoindent
 syntax on
-colorscheme solarized
+colorscheme monokai
 set background=dark
 "Plugin stuff
 let python_highlight_all=1
@@ -45,7 +46,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:NERDTreeShowHidden=1
 "nerdcommenter told me to do this
 filetype plugin on
-let g:virtualenv_directory='/home/haider/env/'
+let g:virtualenv_directory='/home/neo/envs/'
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
