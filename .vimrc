@@ -22,6 +22,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sickill/vim-monokai'
+Plug 'ayu-theme/ayu-vim'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 "personal config
@@ -34,8 +36,13 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set autoindent
 syntax on
-colorscheme monokai
+
+"Theme stuff
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 set background=dark
+
 "Plugin stuff
 let python_highlight_all=1
 let NERDTreeMinimalUI=1
