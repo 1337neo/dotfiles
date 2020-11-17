@@ -20,8 +20,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
