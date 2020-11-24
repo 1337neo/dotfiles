@@ -111,3 +111,4 @@ source $ZSH/oh-my-zsh.sh
 
 WORKON_HOME=$HOME/envs
 source $HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.zsh_aliases
