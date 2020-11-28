@@ -6,6 +6,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 "vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline-themes'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'preservim/nerdtree'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
@@ -20,8 +23,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'ayu-theme/ayu-vim'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 "personal config
@@ -37,18 +40,20 @@ syntax on
 
 "Theme stuff
 set termguicolors
-let ayucolor="dark"
+let ayucolor='dark'
 colorscheme ayu
-set background=dark
 
 "Plugin stuff
 let python_highlight_all=1
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows = 1
-"start nerdtreee
+
+"nerdtree stuff
 autocmd vimenter * NERDTree
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows = 1
+
+
 "nerdcommenter told me to do this
 filetype plugin on
 let g:virtualenv_directory='/home/neo/envs/'
@@ -62,23 +67,36 @@ let g:airline#extensions#tabline#show_tab_type = 0 "disable weird orange thing
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 
+"Terminal transparency uwu?
+"hi! Normal ctermbg=NONE guibg=NONE
+"hi! NonText ctermbg=NONE guibg=NONE
+
 "remaps
+"file save
+nnoremap <silent><c-s> :<c-u>update<cr>
+
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
-nnoremap <C-W> <C-W><C-K>
-nnoremap <C-D> <C-W><C-L>
-nnoremap <C-A> <C-W><C-H>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 
 "Tab remaps
 nnoremap <F1> :tabprev<CR>
 nnoremap <F2> :tabnext<CR>
 nnoremap <F3> :tabnew<CR>
 
-"remap nerdcomment  toggle"
+"NERDTree
+nnoremap <silent> <C-f> :execute 'NERDTreeToggle'<CR>
+
+
+"remap nerdcomment toggle
 "you can press number of lines prior to pressing macro"
-":map <C-z> <plug>NERDCommenterToggle
 nmap <C-c> <Plug>NERDCommenterToggle
 vmap <C-c> <Plug>NERDCommenterToggle<CR>gv
+
 
 "Python PEP 8 indentation
 au BufNewFile,BufRead *.py
