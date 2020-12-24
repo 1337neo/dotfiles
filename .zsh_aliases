@@ -1,3 +1,2 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias commiefetch='neofetch --config $HOME/.config/neofetch/commiefetch.conf'
-alias batfetch='neofetch  --config $HOME/.config/neofetch/batfetch.conf'
+alias gdb='aarch64-linux-gnu-gdb'

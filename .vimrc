@@ -25,11 +25,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'chrisbra/Colorizer'
+Plug 'ulwlu/elly.vim'
+Plug 'vim-crystal/vim-crystal'
 call plug#end()
 
 "personal config
 set noswapfile
-set ts=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set number
 set foldmethod=indent
 set foldlevel=99
@@ -39,10 +43,10 @@ set autoindent
 syntax on
 
 "Theme stuff
-set termguicolors
-let ayucolor='dark'
+if exists('+termguicolors')
+        set termguicolors
+endif
 colorscheme ayu
-
 "Plugin stuff
 let python_highlight_all=1
 
@@ -64,7 +68,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#show_close_button = 0 "disable weird x button on buffers
 let g:airline#extensions#tabline#show_tab_nr = 0 "disable tab number
 let g:airline#extensions#tabline#show_tab_type = 0 "disable weird orange thing
-let g:airline_theme='solarized'
+let g:airline_theme='spaceduck'
 let g:airline_powerline_fonts = 1
 
 "Terminal transparency uwu?
