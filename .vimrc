@@ -6,6 +6,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 "vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'morhetz/gruvbox'
+Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
@@ -43,10 +46,22 @@ set autoindent
 syntax on
 
 "Theme stuff
-if exists('+termguicolors')
-        set termguicolors
-endif
-colorscheme ayu
+set termguicolors
+
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_undercurl=1
+let g:gruvbox_underline=1
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark='hard'
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+set bg=light
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+colorscheme gruvbox
 "Plugin stuff
 let python_highlight_all=1
 

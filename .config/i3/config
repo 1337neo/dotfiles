@@ -271,6 +271,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
  bar {
+		 font pango:JetBrainsMono NerdFont 9
 		 status_command i3blocks
  }
 
@@ -285,16 +286,18 @@ bindsym Print exec flameshot full -c
 # exec --no-startup-id synclient NaturalScrolling=1 HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 # Set screen resolution (use arandr to get command flags)
-exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1280x800 --pos 0x0 --rotate normal
 
 # Use feh to set wallpaper
 # exec_always --no-startup-id feh --bg-fill /home/mark/Pictures/wallpaper.png
-exec_always --no-startup-id feh --bg-fill /home/neo/Pictures/backgrounds/seawall.jpg
+exec_always --no-startup-id feh --bg-fill /home/neo/Pictures/backgrounds/cyberpunk.png
 
 #Start dunst
 exec_always --no-startup-id dunst
 #Start flameshot screenshot 
 exec_always --no-startup-id flameshot
+
+exec_always picom --experimental-backends
 
 # class                 border  bground text    indicator child_border
 client.focused          #4C7899 #285577 #FFFFFF #F40803   #285577
