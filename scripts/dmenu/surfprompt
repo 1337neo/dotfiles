@@ -1,0 +1,9 @@
+#!/bin/bash
+dmen='dmenu -c -bw 3 -l 20 -h 24'
+engine=$(cat $HOME/.config/csurf/config | awk '{split($1, a, "|"); print a[1]}' | $dmen -p "Chose engine")
+if [ -z "$engine" ]; then
+	exit 1
+else
+	term=$(cat /dev/null | $dmen -p "Search $engine: ")
+	csurf $engine $term
+fi
