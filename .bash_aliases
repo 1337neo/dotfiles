@@ -1,4 +1,4 @@
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias .files='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
 
 # docker alises
 alias dk='docker'

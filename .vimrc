@@ -6,30 +6,37 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 "vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'morhetz/gruvbox'
-Plug 'powerline/powerline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim'
+
 Plug 'preservim/nerdtree'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'jiangmiao/auto-pairs'
+
+"Python
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
 Plug 'jmcantrell/vim-virtualenv'
+
+"Themes
+Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'vim-airline/vim-airline-themes'
+"Icons in nerdtree
+Plug 'ryanoasis/vim-devicons'
+
+"Syntax hilighting
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'chrisbra/Colorizer'
-Plug 'ulwlu/elly.vim'
 Plug 'vim-crystal/vim-crystal'
+"Color codes
+Plug 'chrisbra/Colorizer'
+"hilighting for nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 call plug#end()
 
 "personal config
@@ -45,8 +52,12 @@ set backspace=indent,eol,start
 set autoindent
 syntax on
 
-"Theme stuff
-set termguicolors
+"Theme and color stuff below
+
+set termguicolors 
+"Render colorscheme in suckless terminal/alacritty
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
@@ -60,7 +71,6 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 set bg=light
-set guifont=DroidSansMono\ Nerd\ Font\ 11
 colorscheme gruvbox
 "Plugin stuff
 let python_highlight_all=1
@@ -72,7 +82,6 @@ let g:NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
 
-
 "nerdcommenter told me to do this
 filetype plugin on
 let g:virtualenv_directory='/home/neo/envs/'
@@ -83,12 +92,8 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#show_close_button = 0 "disable weird x button on buffers
 let g:airline#extensions#tabline#show_tab_nr = 0 "disable tab number
 let g:airline#extensions#tabline#show_tab_type = 0 "disable weird orange thing
-let g:airline_theme='spaceduck'
+"let g:airline_theme='spaceduck'
 let g:airline_powerline_fonts = 1
-
-"Terminal transparency uwu?
-"hi! Normal ctermbg=NONE guibg=NONE
-"hi! NonText ctermbg=NONE guibg=NONE
 
 "remaps
 "file save

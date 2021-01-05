@@ -1,2 +1,5 @@
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias .files='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME'
 alias gdb='aarch64-linux-gnu-gdb'
+alias vi3='vim $HOME/.config/i3/config'
+alias emacs='emacs -nw'
+alias vi3b='vim $HOME/.config/i3blocks/config'

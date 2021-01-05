@@ -9,14 +9,14 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/neo/.oh-my-zsh"
+export ZSH="/usr/share/ohmyzsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,11 +107,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-WORKON_HOME=$HOME/envs
-source $HOME/.local/bin/virtualenvwrapper.sh
+#WORKON_HOME=$HOME/envs
+#source $HOME/.local/bin/virtualenvwrapper.sh
+#powerline-daemon -q
+#. /usr/share/powerline/bindings/zsh/powerline.zsh
 source $HOME/.zsh_aliases
-powerline-daemon -q
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+
+#Activate my default venv
+source $HOME/.envs/python/default/bin/activate
 
