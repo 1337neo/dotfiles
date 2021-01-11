@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Select and play shit  from playlists, yo.
+dmen='dmenu  -c -bw 3 -l 20 -h 24'
+pl=$(ls $HOME/playlists/ | $dmen -p "Playlists")
+if [ ! -z "$pl" ]; then
+	tr=$(cat $HOME/playlists/$pl | awk '{$NF=""; print $0}' | $dmen -p "Pick track")
+	if [ ! -z "$tr" ]; then
+		#Prepare playlist file	
+		cat $HOME/playlists/$pl | awk '{print $NF}' > /tmp/playlist
+		url=$(cat $HOME/playlists/$pl | grep "$tr" | awk '{print $NF}')
+		start_at=$(cat -n $HOME/playlists/$pl | grep "$url" | awk  '{print $1}')
+		start_at=$(expr $start_at - 1)
+		echo  $start_at
+		if [ ! -z $(pgrep 'mpv') ];
+		then
+			pkill mpv
+		fi
+		mpv --no-video --input-ipc-server=/tmp/mpvsocket --playlist=/tmp/playlist -playlist-start=$start_at &
+	fi
+fi

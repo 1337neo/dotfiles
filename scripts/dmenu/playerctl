@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Control mpv
+ch=$( printf 'PL/PA\nNXT\nPRV\nST' | dmenu -c )
+case $ch in
+	PL/PA)
+	echo '{"command": ["cycle", "pause"]}' | socat - /tmp/mpvsocket;
+esac
