@@ -13,7 +13,7 @@ exec_always --no-startup-id flameshot #Screenshot app
 
 
 #Set background
-exec_always --no-startup-id feh --bg-fill /home/vanity/pix/bg/linux/nvidia.png
+exec_always --no-startup-id feh --bg-fill /home/vanity/pic/bg/linux/nvidia.png
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -184,6 +184,8 @@ bar {
 
 #Some dmenu  stuff
 bindsym $mod+s exec surfprompt
+bindsym $mod+p exec playlist
+bindsym $mod+shift+p exec playerctl
 
 #######
 #THEME#
@@ -217,3 +219,5 @@ client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
 #end of window title bars & borders section
+#
+assign [class="Firefox"] 2
