@@ -11,7 +11,6 @@ if [ ! -z "$pl" ]; then
 		url=$(cat $HOME/playlists/$pl | grep "$tr" | awk '{print $NF}')
 		start_at=$(cat -n $HOME/playlists/$pl | grep "$url" | awk  '{print $1}')
 		start_at=$(expr $start_at - 1)
-		echo  $start_at
 		if [ ! -z $(pgrep 'mpv') ];
 		then
 			pkill mpv
