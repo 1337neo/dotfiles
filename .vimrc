@@ -7,10 +7,10 @@ endif
 "vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -35,7 +35,7 @@ Plug 'vim-crystal/vim-crystal'
 "Color codes
 Plug 'chrisbra/Colorizer'
 "hilighting for nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 

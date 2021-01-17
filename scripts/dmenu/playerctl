@@ -1,8 +1,23 @@
 #!/bin/bash
 
 # Control mpv
-ch=$( printf 'PL/PA\nNXT\nPRV\nST' | dmenu -c )
+ch=$1
+cmd='socat - /home/vanity/.tmp/mpvsocket'
+if [ -z "$ch" ]; then
+	ch=$( printf 'PLAY\nNEXT\nPREV\nSTOP' | dmenu -c )
+fi
+ch=$(echo $ch |  awk {'print toupper($1)'})
 case $ch in
-	PL/PA)
-	echo '{"command": ["cycle", "pause"]}' | socat - /tmp/mpvsocket;
+	PLAY)
+		echo '{"command": ["cycle", "pause"]}' | $cmd
+		;;
+	NEXT)
+		echo '{"command": ["playlist-next"]}' | $cmd
+		;;
+	PREV)
+		echo '{"command": ["playlist-prev"]}' | $cmd
+		;;
+	STOP)
+		echo '' | $cmd
+		;;
 esac

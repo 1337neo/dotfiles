@@ -7,7 +7,7 @@ if [ ! -z "$pl" ]; then
 	tr=$(cat $HOME/playlists/$pl | awk '{$NF=""; print $0}' | $dmen -p "Pick track")
 	if [ ! -z "$tr" ]; then
 		#Prepare playlist file	
-		cat $HOME/playlists/$pl | awk '{print $NF}' > /tmp/playlist
+		cat $HOME/playlists/$pl | awk '{print $NF}' > $HOME/.tmp/playlist
 		url=$(cat $HOME/playlists/$pl | grep "$tr" | awk '{print $NF}')
 		start_at=$(cat -n $HOME/playlists/$pl | grep "$url" | awk  '{print $1}')
 		start_at=$(expr $start_at - 1)
@@ -15,6 +15,6 @@ if [ ! -z "$pl" ]; then
 		then
 			pkill mpv
 		fi
-		mpv --no-video --input-ipc-server=/tmp/mpvsocket --playlist=/tmp/playlist -playlist-start=$start_at &
+		mpv --no-video --input-ipc-server=$HOME/.tmp/mpvsocket --playlist=$HOME/.tmp/playlist -playlist-start=$start_at --title=$tr &
 	fi
 fi
