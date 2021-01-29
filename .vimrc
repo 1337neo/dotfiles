@@ -12,6 +12,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
 
 "Python
 Plug 'vim-scripts/indentpython.vim'
@@ -21,7 +22,6 @@ Plug 'nvie/vim-flake8'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline-themes'
-"Icons in nerdtree
 
 "Syntax hilighting
 Plug 'ekalinin/Dockerfile.vim'
@@ -51,15 +51,19 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 
-set bg=light
+set bg=dark
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
 let g:gruvbox_undercurl=1
 let g:gruvbox_underline=1
 let g:gruvbox_termcolors=256
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme ayu
 
+hi Search guibg=black guifg=white
+hi Search cterm=NONE ctermfg=white ctermbg=black
+hi Cursor guifg=white guibg=black
 "Plugin stuff
 let python_highlight_all=1
 
@@ -70,6 +74,13 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 3
 "size of window
 let g:netrw_winsize = 25
+let g:keepdir = 0
+let g:liststyle = 1
+let g:netrw_sort_options = 'i'
+
+"Show hidden files nerdtree
+let NERDTreeShowHidden=1
+
 
 "nerdcommenter told me to do this
 filetype plugin on
@@ -84,10 +95,17 @@ let g:airline#extensions#tabline#show_tab_type = 0 "disable weird orange thing
 let g:airline_powerline_fonts = 1
 
 "split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+
+nnoremap <C-F> :NERDTreeToggle<CR>
+
 
 "Tab remaps
 nnoremap <F1> :tabprev<CR>

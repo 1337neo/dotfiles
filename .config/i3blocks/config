@@ -1,0 +1,161 @@
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+separator_block_width=5
+markup=none
+separator=false
+
+[music]
+#full_text=Click me!
+interval=1
+label= 
+command=echo '{command:["get_property", "media-title"]}' | socat - $HOME/.tmp/mpvsocket | jq .data | tr -d '"'
+color=#FFF00
+
+#[music_pause]
+#interval=once
+#label=
+#ctrl="play"
+#command=echo "$ctrl"
+#command=playerctl play
+
+
+#[cwidth]
+#interval=persist
+#markup=pango
+#LABEL=
+
+########################
+separator_block_width=5
+[spacer]
+separator_block_width=5
+full_text=|
+color=#b16286
+########################
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage2]
+markup=pango
+label= 
+interval=persist
+color=#fb4934
+
+
+########################
+separator_block_width=5
+[spacer]
+separator_block_width=5
+full_text=|
+color=#b16286
+########################
+
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label= TEMP
+interval=10
+color=#fabd2f
+
+
+########################
+separator_block_width=5
+[spacer]
+separator_block_width=5
+full_text=|
+color=#b16286
+########################
+
+
+
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label= FREE 
+interval=30
+color=#b8bb26
+command=free -h |  head -2 | tail -1 | awk '{print $7}'
+
+########################
+separator_block_width=5
+[spacer]
+separator_block_width=5
+full_text=|
+color=#b16286
+########################
+
+
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label= HD
+interval=30
+command=df --output=avail -h /home | tail -1 | awk '{print $1}'
+color=#fb4934
+separator_block_width=10
+
+# my root / partition
+[diskusage]
+label=/
+interval=once
+command=df --output=avail -h / | tail -1 | awk '{print $1}'
+color=#fb4934
+
+
+########################
+separator_block_width=5
+[spacer]
+separator_block_width=5
+full_text=<-
+color=#b16286
+########################
+
+[date]
+command=date +"%e/%m/%y %H:%M:%S"
+interval=1  
+color=#b8bb26
+
+#lightred #fb4934
+#red #cc241d
+#green #98971a
+#lightgreen #b8bb26
+#yellow #d79921
+#lightyellow #fabd2f
+#blue #458588
+#purple #b16286
+#aqua #689d68
+#
+

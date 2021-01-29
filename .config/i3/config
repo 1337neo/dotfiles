@@ -236,8 +236,8 @@ bindsym $mod+m exec playlist
 bindsym $mod+shift+m exec playerctl
 bindsym Mod1+b exec st
 
-bindsym Mod1+shift+Left exec "amixer set Master 10-"
-bindsym Mod1+shift+Right exec "amixer set Master 10+"
+bindsym Mod1+shift+Left exec "amixer set Master 10%-"
+bindsym Mod1+shift+Right exec "amixer set Master 10%+"
 bindsym Mod1+Up exec "playerctl play"
 bindsym Mod1+Right exec "playerctl next"
 bindsym Mod1+Left exec "playerctl prev"

@@ -109,12 +109,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#WORKON_HOME=$HOME/envs
-#source $HOME/.local/bin/virtualenvwrapper.sh
 #powerline-daemon -q
 #. /usr/share/powerline/bindings/zsh/powerline.zsh
+
+export EDITOR='vim'
 source $HOME/.zsh_aliases
 
+WORKON_HOME=$HOME/.envs/python/
 #Activate my default venv
 source $HOME/.envs/python/default/bin/activate
-
+source $HOME/.envs/python/default/bin/virtualenvwrapper.sh
