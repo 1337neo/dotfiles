@@ -13,6 +13,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
+Plug 'vimwiki/vimwiki'
+Plug 'ycm-core/YouCompleteMe'
 
 "Python
 Plug 'vim-scripts/indentpython.vim'
@@ -41,7 +43,10 @@ set foldlevel=99
 set encoding=utf-8
 set backspace=indent,eol,start
 set autoindent
+set nocompatible
+filetype plugin on
 syntax on
+
 
 "Theme and color stuff below
 
@@ -82,8 +87,6 @@ let g:netrw_sort_options = 'i'
 let NERDTreeShowHidden=1
 
 
-"nerdcommenter told me to do this
-filetype plugin on
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
